@@ -1,6 +1,6 @@
-import {
-    Link
-} from "react-router-dom";
+// import {
+//     Link
+// } from "react-router-dom";
 import { SitePal } from 'sitepal-react-v2';
 
 import { useState } from 'react';
@@ -9,7 +9,7 @@ import { isMobile } from 'react-device-detect';
 
 function Char3D() {
 
-    const [sayAudio, setSayAudio] = useState(null)
+    // const [sayAudio, setSayAudio] = useState(null)
     const [sayText, setSayText] = useState(null)
     const [silentCalled, setsilentCalled] = useState(false)
 
@@ -17,15 +17,15 @@ function Char3D() {
     const isCrios = navigator.userAgent.includes("CriOS")
     const isChrome = navigator.userAgent.includes("Chrome")
 
-    const sayAudioButton = () => {
-        document.forms[0].message.value += "\n------- Say Audio Button Clicked ------- \n";
-        if (!silentCalled && ((isSafari && !isCrios && !isChrome) || isMobile)) {
+    // const sayAudioButton = () => {
+    //     document.forms[0].message.value += "\n------- Say Audio Button Clicked ------- \n";
+    //     if (!silentCalled && ((isSafari && !isCrios && !isChrome) || isMobile)) {
 
-            window.saySilent(0);
-            setsilentCalled(true);
-        }
-        setSayAudio(["sayAudioExample"]);
-    }
+    //         window.saySilent(0);
+    //         setsilentCalled(true);
+    //     }
+    //     setSayAudio(["sayAudioExample"]);
+    // }
 
     const sayTextButton = () => {
         document.forms[0].message.value += "\n------- Say Text Button Clicked ------- \n";
@@ -89,7 +89,7 @@ function Char3D() {
                                                     </tr>
                                                     <tr>
                                                         <td colSpan="2" align="center">
-                                                            <SitePal embed='8412077,600,800,"",1,1,2774771,0,1,0,"psIaA29oSejWLdtrggWOVZa72aZh5dVr",0,0' sayAudio={sayAudio} sayText={sayText} />
+                                                            <SitePal embed='8412077,600,800,"",1,1,2774771,0,1,0,"psIaA29oSejWLdtrggWOVZa72aZh5dVr",0,0' sayText={sayText} />
                                                         </td>
                                                     </tr>
                                                     <tr>
@@ -97,7 +97,7 @@ function Char3D() {
                                                     </tr>
                                                     <tr id="btn_disable_character" style={{ opacity: "0.5", pointerEvents: "none" }}>
                                                         {/* <td align="right">
-                                                            <button onClick={sayAudioButton} className="btn btn_child shadow" type="button" id="btn1" value="SAYAUDIO">sayAudio()</button>
+                                                            <button onClick={sayAudioButton} className="btn btn_child shadow" type="button" id="btn1" value="SAYAUDIO" hidden>sayAudio()</button>
                                                         </td> */}
                                                         <td align="center">
                                                             <button onClick={sayTextButton}
